@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gorilla Tag Mod Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: rgba(10, 10, 10, 0.8);
+            color: #ffffff;
+            overflow: hidden;
+            position: relative;
+        }
+        .bg-primary { background-color: rgba(26, 26, 26, 0.8); }
+        .bg-secondary { background-color: rgba(42, 42, 42, 0.8); }
+        .text-accent { color: #a020f0; }
+        .btn-primary { background-color: #ff00ff; }
+        .btn-primary:hover { background-color: #cc00cc; }
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #a020f0;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall 4s linear infinite;
+        }
+        @keyframes fall {
+            from {
+                transform: translateY(-10vh) translateX(10vw);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100vh) translateX(-10vw);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-primary text-white">
+    <script>
+        function createStar() {
+            const star = document.createElement("div");
+            star.classList.add("star");
+            star.style.left = Math.random() * window.innerWidth + "px";
+            star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(star);
+            setTimeout(() => star.remove(), 4000);
+        }
+        setInterval(createStar, 200);
+    </script>
+    
+    <header class="p-6 bg-secondary text-center text-3xl font-bold text-accent">
+        Gorilla Tag Paid Mod Menu
+    </header>
+    
+    <section class="text-center p-8">
+        <h2 class="text-2xl font-semibold text-accent">Features</h2>
+        <ul class="mt-4 space-y-2">
+            <li>✅ Flight</li>
+            <li>✅ Trasers</li>
+            <li>✅ No Clip</li>
+            <li>✅ Speed Boost</li>
+            <li>✅ Customizable UI</li>
+        </ul>
+    </section>
+    
+    <section class="text-center p-8 bg-secondary">
+        <h2 class="text-2xl font-semibold text-accent">Pricing</h2>
+        <p class="mt-4 text-lg">Get access to the best Gorilla Tag mod menu for just <span class="font-bold text-magenta">$10</span>!</p>
+    </section>
+    
+    <section class="text-center p-8">
+        <h2 class="text-2xl font-semibold text-accent">Purchase</h2>
+        <p class="mt-4">Join our Discord to buy the mod menu.</p>
+        <a href="https://discord.gg/k8cmdQSzAf" class="mt-4 inline-block btn-primary px-6 py-3 rounded-lg text-white font-bold">Join Discord</a>
+    </section>
+    
+    <footer class="text-center p-6 bg-secondary text-accent">
+        &copy; 2025 Gorilla Tag Mods. All Rights Reserved.
+    </footer>
+</body>
+</html>
